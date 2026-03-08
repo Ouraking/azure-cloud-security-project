@@ -4,31 +4,31 @@ A comprehensive Azure IaaS cloud migration and security hardening project for a 
 
 ## Overview
 
-This project addresses the secure migration of a 2,000-employee shipping company (established 1977) from on-premises infrastructure to Microsoft Azure IaaS. The company, a US government contractor processing card transactions, faced critical security gaps following a disgruntled employee's departure — including violated least-privilege principles and unverified backup systems.
+This project addresses the secure migration of a 2,000-employee shipping company (established 1977) from on-premises infrastructure to Microsoft Azure IaaS. The company, a US government contractor processing card transactions, faced critical security gaps following a disgruntled employee's departure, including violated least-privilege principles and unverified backup systems.
 
 ## Key Deliverables
 
-- **Cloud Service Model Selection** — IaaS evaluation with cost-benefit analysis
-- **Identity & Access Management** — Department-specific RBAC with least-privilege enforcement
-- **Key Vault Security** — Hardened encryption key management with soft delete and purge protection
-- **Encryption Strategy** — Data-at-rest and data-in-transit protection recommendations
-- **Backup Configuration** — Automated daily backups with geo-redundant disaster recovery
-- **Risk Analysis & Compliance** — Threat assessment with mitigation countermeasures
+- **Cloud Service Model Selection:** IaaS evaluation with cost-benefit analysis
+- **Identity & Access Management:** Department-specific RBAC with least-privilege enforcement
+- **Key Vault Security:** Hardened encryption key management with soft delete and purge protection
+- **Encryption Strategy:** Data-at-rest and data-in-transit protection recommendations
+- **Backup Configuration:** Automated daily backups with geo-redundant disaster recovery
+- **Risk Analysis & Compliance:** Threat assessment with mitigation countermeasures
 
 ## Technical Implementation
 
 ### Identity & Access Management (IAM)
 
-- **Department-Specific Resource Groups** — Isolated access for Accounting, Marketing, and IT
-- **Contributor Role Assignment** — Users can only create, modify, or delete resources within their own department
-- **IT Backup Contributor** — IT department granted cross-department backup permissions without data access
-- **Just-in-Time Access** — Elevated permissions for IT Key Vault administration
+- **Department-Specific Resource Groups:** Isolated access for Accounting, Marketing, and IT
+- **Contributor Role Assignment:** Users can only create, modify, or delete resources within their own department
+- **IT Backup Contributor:** IT department granted cross-department backup permissions without data access
+- **Just-in-Time Access:** Elevated permissions for IT Key Vault administration
 
 ### Key Vault Security
 
-- **Department-Isolated Key Vaults** — Separate vaults for Marketing, Accounting, and IT
-- **Soft Delete** — 90-day recovery window for accidentally or intentionally deleted keys
-- **Purge Protection** — Prevents permanent deletion during retention period, even with superuser access
+- **Department-Isolated Key Vaults:** Separate vaults for Marketing, Accounting, and IT
+- **Soft Delete:** 90-day recovery window for accidentally or intentionally deleted keys
+- **Purge Protection:** Prevents permanent deletion during retention period, even with superuser access
 - **Granular Access Policies:**
   - Marketing/Accounting: Get, List, Decrypt, Encrypt (read-only key usage)
   - IT: Additional Backup and Restore permissions for disaster recovery
@@ -84,9 +84,9 @@ This project addresses the secure migration of a 2,000-employee shipping company
 
 ## Compliance Recommendations
 
-1. **Azure Policy & Blueprints** — Enforce encryption, tagging, and resource standards automatically
-2. **Azure Security Center & Sentinel** — Continuous security assessment and threat detection with compliance reporting
-3. **Cloud Security Governance Framework** — Defined roles, responsibilities, approval processes, and regular security audits
+1. **Azure Policy & Blueprints:** Enforce encryption, tagging, and resource standards automatically
+2. **Azure Security Center & Sentinel:** Continuous security assessment and threat detection with compliance reporting
+3. **Cloud Security Governance Framework:** Defined roles, responsibilities, approval processes, and regular security audits
 
 ## Technologies & Tools
 
