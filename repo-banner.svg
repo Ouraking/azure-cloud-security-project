@@ -1,0 +1,50 @@
+<svg width="1200" height="170" viewBox="0 0 1200 170" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cloud Security Implementation">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1280" y2="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0A0F1E"/><stop offset="0.55" stop-color="#0D1428"/><stop offset="1" stop-color="#101A33"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2DD4BF"/><stop offset="1" stop-color="#F5B942"/>
+    </linearGradient>
+    <radialGradient id="glowT" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#2DD4BF" stop-opacity="0.18"/><stop offset="1" stop-color="#2DD4BF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowG" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#F5B942" stop-opacity="0.14"/><stop offset="1" stop-color="#F5B942" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <clipPath id="frame"><rect width="1200" height="170" rx="14"/></clipPath>
+  <style>
+    .pulse { animation: pulse 3.2s ease-in-out infinite; transform-origin: 1080px 85px; }
+    @keyframes pulse { 0%,100% { opacity: 0.85; } 50% { opacity: 1; } }
+  </style>
+  <g clip-path="url(#frame)">
+    <rect width="1200" height="170" fill="url(#bg)"/>
+    <g stroke="#223055" stroke-opacity="0.35" stroke-width="1">
+      <path d="M0 85 H1200"/><path d="M200 0 V170 M400 0 V170 M600 0 V170 M800 0 V170 M1000 0 V170"/>
+    </g>
+    <circle cx="1080" cy="85" r="160" fill="url(#glowT)"/>
+    <g class="pulse">
+    <g transform="translate(1080,80) scale(0.62)" opacity="1">
+      <path d="M0 -78 L67 -52 V8 C67 54 38 86 0 102 C-38 86 -67 54 -67 8 V-52 Z"
+            fill="#0D1428" stroke="url(#accent)" stroke-width="2.5"/>
+      <g stroke="#2DD4BF" stroke-width="1.6" fill="none">
+        <path d="M0 -30 V26 M0 -6 H27 M0 10 H-27 M27 -6 V-20 M-27 10 V24"/>
+      </g>
+      <g fill="#F5B942">
+        <circle cx="0" cy="-30" r="3.4"/><circle cx="27" cy="-20" r="3.4"/>
+        <circle cx="-27" cy="24" r="3.4"/><circle cx="0" cy="26" r="3.4"/>
+      </g>
+      <circle cx="0" cy="12" r="118" stroke="#2DD4BF" stroke-opacity="0.3" stroke-width="1" fill="none" stroke-dasharray="3 6"/>
+      <circle cx="0" cy="12" r="146" stroke="#F5B942" stroke-opacity="0.22" stroke-width="1" fill="none" stroke-dasharray="2 8"/>
+      <circle cx="104" cy="-62" r="5" fill="#2DD4BF"/>
+      <circle cx="-146" cy="12" r="3" fill="#AEE8DE"/>
+      <circle cx="146" cy="40" r="4" fill="#F5B942"/>
+    </g></g>
+    <text x="56" y="56" font-family="ui-monospace, 'SFMono-Regular', Consolas, Menlo, monospace" font-size="14" font-weight="500" fill="#8B97B8" letter-spacing="3">OURAKING / AZURE-CLOUD-SECURITY-PROJECT</text>
+    <text x="56" y="102" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="38" font-weight="700" fill="#F2F6FF">Cloud Security Implementation</text>
+    <rect x="58" y="116" width="120" height="4" rx="2" fill="url(#accent)"/>
+    <text x="56" y="146" font-family="'Segoe UI', Ubuntu, Helvetica, Arial, sans-serif" font-size="18" font-weight="500" fill="#AEE8DE">Azure IaaS migration and hardening · FISMA and PCI-DSS alignment</text>
+    <rect x="0.5" y="0.5" width="1199" height="169" rx="14" stroke="#24335C" fill="none"/>
+  </g>
+</svg>

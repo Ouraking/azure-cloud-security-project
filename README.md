@@ -1,3 +1,5 @@
+<img src="./repo-banner.svg" alt="Cloud Security Implementation: Azure IaaS migration and hardening" width="100%"/>
+
 # Cloud Security Implementation
 
 A comprehensive Azure IaaS cloud migration and security hardening project for a national shipping company transitioning from on-premises to cloud infrastructure.
@@ -30,8 +32,8 @@ This project addresses the secure migration of a 2,000-employee shipping company
 - **Soft Delete:** 90-day recovery window for accidentally or intentionally deleted keys
 - **Purge Protection:** Prevents permanent deletion during retention period, even with superuser access
 - **Granular Access Policies:**
-  - Marketing/Accounting: Get, List, Decrypt, Encrypt (read-only key usage)
-  - IT: Additional Backup and Restore permissions for disaster recovery
+- Marketing/Accounting: Get, List, Decrypt, Encrypt (read-only key usage)
+- IT: Additional Backup and Restore permissions for disaster recovery
 
 ### Encryption
 
