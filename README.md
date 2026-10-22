@@ -8,6 +8,52 @@ A comprehensive Azure IaaS cloud migration and security hardening project for a 
 
 This project addresses the secure migration of a 2,000-employee shipping company (established 1977) from on-premises infrastructure to Microsoft Azure IaaS. The company, a US government contractor processing card transactions, faced critical security gaps following a disgruntled employee's departure, including violated least-privilege principles and unverified backup systems.
 
+## Architecture at a Glance
+
+Department isolation is the core control: a compromised credential in one
+department cannot reach another department's data or keys.
+
+```mermaid
+%%{init: {'theme':'base','themeVariables':{'primaryColor':'#101A33','primaryTextColor':'#F2F6FF','primaryBorderColor':'#2DD4BF','lineColor':'#8B97B8','secondaryColor':'#0D1428','tertiaryColor':'#0A0F1E','clusterBkg':'#0A0F1E','clusterBorder':'#24335C','edgeLabelBackground':'#0D1428','fontSize':'14px'}}}%%
+flowchart TB
+    subgraph TENANT["Azure tenant"]
+        direction LR
+
+        subgraph ACC["Accounting"]
+            A1["Resource group"]
+            A2["Key Vault<br/>get, list, encrypt, decrypt"]
+            A1 --- A2
+        end
+
+        subgraph MKT["Marketing"]
+            M1["Resource group"]
+            M2["Key Vault<br/>get, list, encrypt, decrypt"]
+            M1 --- M2
+        end
+
+        subgraph IT["IT"]
+            I1["Resource group"]
+            I2["Key Vault<br/>plus backup and restore"]
+            I1 --- I2
+        end
+    end
+
+    USERS["Department users<br/>Contributor role, own group only"] --> ACC
+    USERS --> MKT
+    USERS --> IT
+
+    IT -.->|"Backup Contributor<br/>no data access"| ACC
+    IT -.->|"Backup Contributor<br/>no data access"| MKT
+
+    TENANT --> GUARD["Soft delete, 90 days<br/>Purge protection on"]
+    GUARD --> BK["Azure Backup, daily 7:00 PM ET<br/>45-day retention, geo-redundant"]
+
+    classDef guard fill:#0D1428,stroke:#F5B942,stroke-width:2px,color:#F5B942
+    classDef core fill:#101A33,stroke:#2DD4BF,stroke-width:2px,color:#F2F6FF
+    class GUARD,BK guard
+    class USERS core
+```
+
 ## Key Deliverables
 
 - **Cloud Service Model Selection:** IaaS evaluation with cost-benefit analysis
